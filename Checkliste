@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Danke für deine Bestätigung</title>
+</head>
+<body>
+  <h1>Deine Anmeldung ist jetzt bestätigt!</h1>
+  <p>Danke, dass du dich für unseren Newsletter entschieden hast.</p>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('contact_id');
+    if (id) {
+      fetch('https://hook.make.com/DEIN_WEBHOOK_ID?contact_id=' + encodeURIComponent(id))
+        .catch(console.error);
+    } else {
+      document.body.insertAdjacentHTML('beforeend',
+        '<p style="color:red">Fehler: fehlende Kontakt-ID.</p>');
+    }
+  </script>
+</body>
+</html>
