@@ -11,7 +11,7 @@
     const params = new URLSearchParams(window.location.search);
     const id = params.get('contact_id');
     if (id) {
-      fetch('https://hook.make.com/DEIN_WEBHOOK_ID?contact_id=' + encodeURIComponent(id))
+      fetch('https://hook.make.com/https://hook.eu2.make.com/6aeuyt4jqc6yfln77s5vo85gsb9qjswv?contact_id=' + encodeURIComponent(id))
         .catch(console.error);
     } else {
       document.body.insertAdjacentHTML('beforeend',
